@@ -13,10 +13,69 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="헤더 파일\graphic">
+      <UniqueIdentifier>{61967669-e7a6-401b-a7b5-cc65c70b81cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\game">
+      <UniqueIdentifier>{0939d950-710d-4acf-b0cc-5c91258fd195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\game\initialize">
+      <UniqueIdentifier>{c751fc94-7435-4965-b7ef-35ebc93774d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\graphic\interface">
+      <UniqueIdentifier>{c5d549f8-3444-4c21-b4a2-ab741f12c54b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\game\Utility">
+      <UniqueIdentifier>{edb7a8f0-cd6e-44bf-9d18-3a38e47142ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\event">
+      <UniqueIdentifier>{55c6c737-4fcd-4dc8-aaed-dd9ebad8e82e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\game\data">
+      <UniqueIdentifier>{ede76286-6070-4090-9625-c6cea0ace53a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HEROS_A.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Resizable.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Init.h">
+      <Filter>헤더 파일\game\initialize</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>헤더 파일\graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Resizable.h">
+      <Filter>헤더 파일\graphic\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>헤더 파일\game\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.h">
+      <Filter>헤더 파일\event</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardEvent.h">
+      <Filter>헤더 파일\event</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowEvent.h">
+      <Filter>헤더 파일\event</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEvent.h">
+      <Filter>헤더 파일\event</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

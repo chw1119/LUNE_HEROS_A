@@ -1,11 +1,25 @@
 ﻿// LUNE_HEROS_A.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
+#include "stdafx.h"
 
-#include <iostream>
+float a = 0.f;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	GameWindow* window = nullptr;
+
+	Initialize::Init(&window);
+
+	auto test = Utility::GetFullScreenSize();
+
+	std::cout << test.first << "  " << test.second;
+
+	while (1) 
+	{
+		a += 0.01;
+
+		window->Resize(sin(a) * 800, 600);
+	}
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
