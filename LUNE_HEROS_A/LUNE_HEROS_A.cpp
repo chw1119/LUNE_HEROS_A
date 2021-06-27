@@ -14,11 +14,14 @@ int main()
 
 	std::cout << test.first << "  " << test.second;
 
+	SDL_Event event;
+
 	while (1) 
 	{
-		a += 0.01;
+		window->Poll(&event);
 
-		window->Resize(sin(a) * 800, 600);
+		Event::ProcessEvent(&event);
+
 	}
 }
 
