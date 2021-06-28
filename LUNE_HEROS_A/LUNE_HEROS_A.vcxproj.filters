@@ -34,6 +34,9 @@
     <Filter Include="헤더 파일\game\data">
       <UniqueIdentifier>{ede76286-6070-4090-9625-c6cea0ace53a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\graphic\GL">
+      <UniqueIdentifier>{9c6c91d9-61a6-49d4-abab-f251ed91d3e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HEROS_A.cpp">
@@ -46,6 +49,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Utility.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Drawable.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -76,6 +85,12 @@
     </ClInclude>
     <ClInclude Include="MouseEvent.h">
       <Filter>헤더 파일\event</Filter>
+    </ClInclude>
+    <ClInclude Include="Drawable.h">
+      <Filter>헤더 파일\graphic\interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

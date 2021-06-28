@@ -14,13 +14,13 @@ int main()
 
 	std::cout << test.first << "  " << test.second;
 
+	window->Show();
+
 	SDL_Event event;
 
 	while (1) 
 	{
-		window->Poll(&event);
-
-		Event::ProcessEvent(&event);
+		window->Process();
 
 	}
 }

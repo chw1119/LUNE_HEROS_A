@@ -4,7 +4,7 @@ GameWindow::GameWindow()
 {
 	bool success = true;
 
-	window = SDL_CreateWindow("LUNE HEROS", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+	window = SDL_CreateWindow("LUNE HEROS", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE | SDL_WINDOW_SHOWN);
 
 	context = SDL_GL_CreateContext(window);
 
@@ -34,6 +34,7 @@ GameWindow::GameWindow()
 
 		//Initialize OpenGL
 
+		glClearColor(0,0,0,1);
 	}
 }
 
@@ -97,9 +98,37 @@ void GameWindow::Hide()
 	SDL_HideWindow(window);
 }
 
-void GameWindow::Poll(SDL_Event* event)
+int GameWindow::Poll(SDL_Event* event)
 {
-	SDL_PollEvent(event);
+	return SDL_PollEvent(event);
+}
+
+void GameWindow::Process()
+{
+	SDL_Event event;
+
+	int isEmpty;
+
+	while (isEmpty = Poll(&event)) 
+	{
+		Event::ProcessEvent(&event, this);
+
+	}
+
+
+
+}
+
+void GameWindow::FullScreen(bool isFull)
+{
+	if (isFull) {
+		SDL_SetWindowFullscreen(window, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL | SDL_WINDOW_FULLSCREEN_DESKTOP);
+	}
+	else
+	{
+		SDL_SetWindowFullscreen(window, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+		
+	}
 }
 
 void GameWindow::SetOpacity(float op)

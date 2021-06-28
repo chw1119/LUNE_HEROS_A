@@ -3,8 +3,9 @@
 
 #include <SDL.h>
 
-void Event::WindowEventManager(SDL_Event* event) 
+void Event::WindowEventManager(SDL_Event* event, GameWindow* window)
 {
+
     if (event->type == SDL_WINDOWEVENT) {
         switch (event->window.event) {
         case SDL_WINDOWEVENT_SHOWN:
@@ -30,6 +31,9 @@ void Event::WindowEventManager(SDL_Event* event)
             SDL_Log("Window %d size changed to %dx%d",
                 event->window.windowID, event->window.data1,
                 event->window.data2);
+
+            window->Resize(event->window.data1, event->window.data2);
+
             break;
         case SDL_WINDOWEVENT_MINIMIZED:
             SDL_Log("Window %d minimized", event->window.windowID);

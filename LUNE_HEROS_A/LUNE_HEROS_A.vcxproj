@@ -149,16 +149,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="LUNE_HEROS_A.cpp" />
+    <ClCompile Include="Model.cpp" />
     <ClCompile Include="Resizable.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Drawable.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Init.h" />
     <ClInclude Include="KeyboardEvent.h" />
+    <ClInclude Include="Model.h" />
     <ClInclude Include="MouseEvent.h" />
     <ClInclude Include="Resizable.h" />
     <ClInclude Include="stdafx.h" />

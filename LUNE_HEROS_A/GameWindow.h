@@ -26,7 +26,9 @@ public:
 
 	void Hide();
 
-	void Poll(SDL_Event* event);
+	void Process();
+
+	void FullScreen(bool isFull);
 
 	void SetOpacity(float op);
 
@@ -34,9 +36,14 @@ public:
 
 	void Position(int xpos, int ypos);
 
+	int Poll(SDL_Event* event);
+
 	float GetOpacity();
 
 	virtual void Resize(float xSize, float ySize) override;
 };
 
+
+
+#include "EventManager.h"
 #endif

@@ -2,7 +2,8 @@
 
 #include <SDL.h>
 
-void Event::KeyboardEventManager(SDL_Event* event) 
+
+void Event::KeyboardEventManager(SDL_Event* event, GameWindow* window)
 {
 
 }

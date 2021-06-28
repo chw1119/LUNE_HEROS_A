@@ -14,7 +14,7 @@
 #include "Resizable.h"
 #include "GameWindow.h"
 
-#include "EventManager.h"
+//#include "EventManager.h"
 
 #pragma comment(lib,"Opengl32.lib")
 
