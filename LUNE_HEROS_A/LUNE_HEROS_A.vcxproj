@@ -154,6 +154,7 @@
     <ClCompile Include="LUNE_HEROS_A.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Resizable.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,7 @@
     <ClInclude Include="Model.h" />
     <ClInclude Include="MouseEvent.h" />
     <ClInclude Include="Resizable.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="WindowEvent.h" />

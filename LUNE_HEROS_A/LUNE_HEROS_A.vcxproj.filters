@@ -57,6 +57,9 @@
     <ClCompile Include="Model.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -89,8 +92,11 @@
     <ClInclude Include="Drawable.h">
       <Filter>헤더 파일\graphic\interface</Filter>
     </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>헤더 파일\graphic\GL</Filter>
+    </ClInclude>
     <ClInclude Include="Model.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\graphic\GL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
