@@ -1,8 +1,6 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include "Class.h"
-
 #include <glew.h>
 
 #include <string>

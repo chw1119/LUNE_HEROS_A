@@ -19,7 +19,9 @@ private:
 	GLuint vertexArrayId;
 
 	GLuint vertexBufferId;
-	GLuint indexBufferId;
+	GLuint indexBufferId;\
+
+	GLuint textureBufferId;
 
 	float xPos;
 	float yPos;
@@ -32,11 +34,12 @@ private:
 	Shader* attachedShader;
 	GameWindow* windowParent;
 
-	const static Shader STANDARD_SHADER();
+	const static Shader STANDARD_SHADER;
+
 	
 private:
 
-	void InitGraphics();
+	void InitGraphics(const Shader* shader);
 
 public:
 
@@ -52,5 +55,9 @@ public:
 
 	virtual void Draw();
 };
+
+
+const Shader Model::STANDARD_SHADER = Shader("./resource/vertex/stadardVertexShader.glsl", "./resource/fragment/stadardFragmentShader.glsl");
+
 
 #endif
