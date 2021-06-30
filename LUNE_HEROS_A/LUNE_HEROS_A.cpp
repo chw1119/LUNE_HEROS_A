@@ -18,9 +18,15 @@ int main()
 
 	SDL_Event event;
 
+	Shader std("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
+
 	while (1) 
 	{
 		window->Process();
+
+		//auto model = new Model(window,"./resource/images/LuneHeroTitle.png");
+
+		//model->Draw();
 
 	}
 }

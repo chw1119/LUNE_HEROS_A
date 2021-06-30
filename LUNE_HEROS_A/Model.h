@@ -7,6 +7,7 @@
 
 #include <glew.h>
 #include <SDL.h>
+#include <SDL_image.h>
 
 #include "Shader.h"
 #include "Drawable.h"
@@ -33,19 +34,16 @@ private:
 
 	Shader* attachedShader;
 	GameWindow* windowParent;
-
-	const static Shader STANDARD_SHADER;
-
 	
 private:
 
-	void InitGraphics(const Shader* shader);
+	void InitGraphics(const Shader* shader, std::string textureLocation);
 
 public:
 
-	Model(GameWindow* windowParent);
+	Model(GameWindow* windowParent, Shader* shader, std::string textureLocation);
 
-	Model(GameWindow* windowParent, float xpos, float ypos, float xsize, float ysize);
+	Model(GameWindow* windowParent, Shader* shader, std::string textureLocation, float xpos, float ypos, float xsize, float ysize);
 
 	int GetStatus() const;
 
@@ -56,8 +54,6 @@ public:
 	virtual void Draw();
 };
 
-
-const Shader Model::STANDARD_SHADER = Shader("./resource/vertex/stadardVertexShader.glsl", "./resource/fragment/stadardFragmentShader.glsl");
 
 
 #endif

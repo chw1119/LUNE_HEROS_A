@@ -10,6 +10,7 @@
 #include <iostream>
 
 #include "Init.h"
+#include "Model.h"
 #include "Utility.h"
 #include "Resizable.h"
 #include "GameWindow.h"
@@ -19,6 +20,8 @@
 #pragma comment(lib,"Opengl32.lib")
 
 #pragma comment(lib,"SDL2.lib")
+
+#pragma comment(lib,"SDL2_image.lib")
 
 #pragma comment(lib,"glu32.lib")
 

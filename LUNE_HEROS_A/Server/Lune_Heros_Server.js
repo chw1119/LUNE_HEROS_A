@@ -64,7 +64,9 @@ const Packet = class {
 
 
 const ItemPacket = class extends Packet {
-    
+    constructor(){
+
+    }
 }
 
 const LoginPacket = class extends Packet {
@@ -75,12 +77,16 @@ const LoginPacket = class extends Packet {
 }
 
 const AcceptPacket = class extends Packet {
+    constructor(){
 
+    }
 }
 
 const DeniedPacket = class extends Packet {
     constructor(deniedReson){
-        this.reason = deniedReson;
+        this.reason = deniedReson || "SOMTHING IS WRONG";
+
+        super(this.reason.length + 4 + 1);
 
     }
 }
