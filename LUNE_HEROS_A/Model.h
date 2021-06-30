@@ -33,6 +33,7 @@ private:
 	int status;
 
 	Shader* attachedShader;
+	SDL_Surface* surface;
 	GameWindow* windowParent;
 	
 private:

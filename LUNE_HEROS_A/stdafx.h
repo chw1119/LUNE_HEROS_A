@@ -9,6 +9,9 @@
 #include <glew.h>
 #include <iostream>
 
+#include <fstream>
+#include <sstream>
+
 #include "Init.h"
 #include "Model.h"
 #include "Utility.h"

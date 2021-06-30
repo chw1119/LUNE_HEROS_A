@@ -34,7 +34,7 @@ GameWindow::GameWindow()
 
 		//Initialize OpenGL
 
-		glClearColor(0,0,0,1);
+		///glClearColor(0,0,0,1);
 	}
 }
 
@@ -143,6 +143,16 @@ float GameWindow::GetOpacity()
 	SDL_GetWindowOpacity(window, &temp);
 
 	return temp;
+}
+
+SDL_Window* GameWindow::GetWindow() const
+{
+	return window;
+}
+
+SDL_Renderer* GameWindow::GetRenderer() const
+{
+	return renderer;
 }
 
 void GameWindow::Resize(float xSize, float ySize)

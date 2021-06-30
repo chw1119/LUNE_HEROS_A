@@ -16,17 +16,24 @@ int main()
 
 	window->Show();
 
+	//window->FullScreen(true);
+
 	SDL_Event event;
 
 	Shader std("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
 
+	auto model = new Model(window, &std, "./resource/images/container.jpg");
 	while (1) 
 	{
 		window->Process();
 
-		//auto model = new Model(window,"./resource/images/LuneHeroTitle.png");
 
-		//model->Draw();
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		model->Draw();
+
+		SDL_GL_SwapWindow(window->GetWindow());
 
 	}
 }

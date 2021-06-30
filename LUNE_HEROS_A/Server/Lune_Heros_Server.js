@@ -84,11 +84,12 @@ const AcceptPacket = class extends Packet {
 
 const DeniedPacket = class extends Packet {
     constructor(deniedReson){
-        this.reason = deniedReson || "SOMTHING IS WRONG";
-
+        this.reason = deniedReson || "SOMTHING IS WRONG"
         super(this.reason.length + 4 + 1);
-
+            
     }
+
+
 }
 
 /*

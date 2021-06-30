@@ -40,6 +40,10 @@ public:
 
 	float GetOpacity();
 
+	SDL_Window* GetWindow() const;
+
+	SDL_Renderer* GetRenderer()const;
+
 	virtual void Resize(float xSize, float ySize) override;
 };
 
