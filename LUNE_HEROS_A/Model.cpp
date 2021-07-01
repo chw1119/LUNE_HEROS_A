@@ -30,10 +30,11 @@ void Model::RenewBuffer()
 
 }
 
-void Model::InitGraphics(const Shader* shader, std::string textureLocation)
+void Model::InitGraphics(const Shader* shader, Texture* texture)
 {
 
 	this->attachedShader = (Shader*)shader;
+	this->texture = texture;
 
 	int w;
 	int h;
@@ -88,42 +89,8 @@ void Model::InitGraphics(const Shader* shader, std::string textureLocation)
 
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData), indexData, GL_STATIC_DRAW);
 
-	surface = IMG_Load(textureLocation.c_str());
-
-
-	glGenTextures(1, &textureBufferId);
-	glBindTexture(GL_TEXTURE_2D, textureBufferId);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	// set texture wrapping to GL_REPEAT (default wrapping method)
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-
-
-
-	if (surface)
-		{
-		int mode = GL_RGB;
-		if (surface->format->BytesPerPixel == 4)
-			mode = GL_RGBA;
-
-		glTexImage2D(GL_TEXTURE_2D, 0, mode, surface->w, surface->h, 0, mode, GL_UNSIGNED_BYTE, surface->pixels);
-		glUniform1i(glGetUniformLocation(attachedShader->ID, "ourTexture"),0);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "Failed to load texture" << std::endl;
-	}
-
-
-
-	glBindTexture(GL_TEXTURE_2D, 0);
-	//delete sur;
-
-
-	SDL_FreeSurface(surface);
-
+	texture->TextureIndex(attachedShader, "ourTexture", 0);
+	texture->Bind();
 
 	auto error = glGetError();
 	if (error != GL_NO_ERROR)
@@ -133,17 +100,17 @@ void Model::InitGraphics(const Shader* shader, std::string textureLocation)
 
 }
 
-Model::Model(GameWindow* _windowParent,Shader* shader,std::string textureUrl) : xSize(500.f), ySize(500.f), xPos(0.f), yPos(0.f), windowParent(_windowParent)
+Model::Model(GameWindow* _windowParent,Shader* shader, Texture* texture) : xSize(500.f), ySize(500.f), xPos(0.f), yPos(0.f), windowParent(_windowParent)
 {
 	SetStatus(STATUS_READY);
-	InitGraphics(shader, textureUrl);
+	InitGraphics(shader, texture);
 }
 
-Model::Model(GameWindow* _windowParent, Shader* shader, std::string textureUrl, float xpos, float ypos, float xsize, float ysize)
+Model::Model(GameWindow* _windowParent, Shader* shader, Texture* texture, float xpos, float ypos, float xsize, float ysize)
 	: xSize(xsize), ySize(ysize), xPos(xpos), yPos(ypos), windowParent(_windowParent)
 {
 	SetStatus(STATUS_READY);
-	InitGraphics(shader, textureUrl);
+	InitGraphics(shader, texture);
 }
 
 int Model::GetStatus() const
@@ -169,10 +136,8 @@ void Model::Bind()
 	float ratioXPos = xPos / (float)w;
 	float ratioYPos = yPos / (float)h;
 
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, textureBufferId);
 
-
+	texture->Bind();
 	attachedShader->Use();
 
 

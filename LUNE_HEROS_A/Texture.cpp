@@ -27,6 +27,8 @@ Texture::Texture(const std::string& textureUrl)
 		std::cout << "Failed to load texture" << std::endl;
 	}
 
+	SDL_FreeSurface(surface);
+
 	index = 0;
 }
 

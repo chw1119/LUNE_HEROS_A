@@ -10,6 +10,7 @@
 #include <SDL_image.h>
 
 #include "Shader.h"
+#include "Texture.h"
 #include "Drawable.h"
 #include "Resizable.h"
 #include "GameWindow.h"
@@ -33,29 +34,34 @@ private:
 
 	int status;
 
+	Texture* texture;
 	Shader* attachedShader;
-	SDL_Surface* surface;
 	GameWindow* windowParent;
 	
 private:
 
 	void RenewBuffer();
 
-	void InitGraphics(const Shader* shader, std::string textureLocation);
+	void InitGraphics(const Shader* shader, Texture* texture);
 
 public:
 
-	Model(GameWindow* windowParent, Shader* shader, std::string textureLocation);
+	Model(GameWindow* windowParent, Shader* shader, Texture* texture);
 
-	Model(GameWindow* windowParent, Shader* shader, std::string textureLocation, float xpos, float ypos, float xsize, float ysize);
+	Model(GameWindow* windowParent, Shader* shader, Texture* texture, float xpos, float ypos, float xsize, float ysize);
 
 	int GetStatus() const;
 
 	void SetStatus(int status);
+
+	Texture* GetTexture()const;
+
+	void SetTexture(Texture* texture);
 	
 	void Bind();
 
 	void Position(float x, float y);
+
 
 	virtual void Draw();
 
