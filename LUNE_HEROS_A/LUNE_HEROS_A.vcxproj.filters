@@ -60,6 +60,9 @@
     <ClCompile Include="Shader.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -97,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="Model.h">
       <Filter>헤더 파일\graphic\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

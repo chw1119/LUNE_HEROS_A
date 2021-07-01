@@ -11,16 +11,17 @@
 
 #include "Shader.h"
 #include "Drawable.h"
+#include "Resizable.h"
 #include "GameWindow.h"
 
-class Model : public Drawable
+class Model : public Drawable ,Resizable
 {
 private:
 
 	GLuint vertexArrayId;
 
 	GLuint vertexBufferId;
-	GLuint indexBufferId;\
+	GLuint indexBufferId;
 
 	GLuint textureBufferId;
 
@@ -38,6 +39,8 @@ private:
 	
 private:
 
+	void RenewBuffer();
+
 	void InitGraphics(const Shader* shader, std::string textureLocation);
 
 public:
@@ -52,7 +55,12 @@ public:
 	
 	void Bind();
 
+	void Position(float x, float y);
+
 	virtual void Draw();
+
+	virtual void Resize(float x, float y);
+
 };
 
 

@@ -23,14 +23,22 @@ int main()
 	Shader std("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
 
 	auto model = new Model(window, &std, "./resource/images/LuneHeroTitle.png");
+
+	float temp = 0;
+
 	while (1) 
 	{
 		window->Process();
 
+		SDL_Delay(1000 / 60);
+		temp += 0.1f;
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+
+		model->Resize(abs(sin(temp) * 50) + 500, abs(sin(temp) * 50) + 500);
+		model->Position(temp, temp);
 		model->Draw();
 
 		SDL_GL_SwapWindow(window->GetWindow());
