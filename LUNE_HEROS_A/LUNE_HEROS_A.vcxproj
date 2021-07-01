@@ -157,11 +157,14 @@
   <ItemGroup>
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="GameWindow.cpp" />
+    <ClCompile Include="LivingModel.cpp" />
     <ClCompile Include="LUNE_HEROS_A.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Resizable.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TitleStage.cpp" />
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,12 +173,15 @@
     <ClInclude Include="GameWindow.h" />
     <ClInclude Include="Init.h" />
     <ClInclude Include="KeyboardEvent.h" />
+    <ClInclude Include="LivingModel.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MouseEvent.h" />
     <ClInclude Include="Resizable.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TitleStage.h" />
     <ClInclude Include="Utility.h" />
     <ClInclude Include="WindowEvent.h" />
   </ItemGroup>

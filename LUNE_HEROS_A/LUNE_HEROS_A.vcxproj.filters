@@ -37,6 +37,9 @@
     <Filter Include="헤더 파일\graphic\GL">
       <UniqueIdentifier>{9c6c91d9-61a6-49d4-abab-f251ed91d3e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\game\stage">
+      <UniqueIdentifier>{1d7baac3-5bff-4cbb-aa60-89d585de908f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HEROS_A.cpp">
@@ -61,6 +64,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Stage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleStage.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="LivingModel.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -101,8 +113,17 @@
     <ClInclude Include="Model.h">
       <Filter>헤더 파일\graphic\GL</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>헤더 파일\graphic\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="LivingModel.h">
+      <Filter>헤더 파일\graphic\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleStage.h">
+      <Filter>헤더 파일\game\stage</Filter>
+    </ClInclude>
     <ClInclude Include="Stage.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\game\stage</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -23,6 +23,7 @@ int main()
 	Shader std("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
 
 	auto model = new Model(window, &std, "./resource/images/LuneHeroTitle.png");
+	auto model1 = new Model(window, &std, "./resource/images/container.jpg");
 
 	float temp = 0;
 
@@ -40,6 +41,11 @@ int main()
 		model->Resize(abs(sin(temp) * 50) + 500, abs(sin(temp) * 50) + 500);
 		model->Position(temp, temp);
 		model->Draw();
+
+
+		model1->Resize(abs(sin(temp) * 50) + 100, abs(sin(temp) * 50) + 100);
+		model1->Position(temp-10, temp-10);
+		model1->Draw();
 
 		SDL_GL_SwapWindow(window->GetWindow());
 
