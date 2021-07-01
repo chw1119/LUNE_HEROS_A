@@ -11,6 +11,6 @@ uniform vec2 sharedLocation;
 
 void main()
 {
-    gl_Position = vec4(vec3(sharedLocation,0.f) + vertexLocation,0.f);
+    gl_Position = vec4(vec3(sharedLocation,0.f) + vertexLocation,1.f);
     TexCoord = textureVertexLocation;
 }

@@ -4,6 +4,8 @@
 void Model::InitGraphics(const Shader* shader, std::string textureLocation)
 {
 
+	this->attachedShader = (Shader*)shader;
+
 	const GLfloat vertexData[(3 + 2) * 4] = {
 		0.f,   ySize, 0.f, 0.f, 1.f,
 		xSize, ySize, 0.f, 1.f, 1.f,
@@ -63,7 +65,7 @@ void Model::InitGraphics(const Shader* shader, std::string textureLocation)
 			mode = GL_RGBA;
 
 		glTexImage2D(GL_TEXTURE_2D, 0, mode, surface->w, surface->h, 0, mode, GL_UNSIGNED_BYTE, surface->pixels);
-
+		glUniform1i(glGetUniformLocation(attachedShader->ID, "ourTexture"),0);
 		glGenerateMipmap(GL_TEXTURE_2D);
 	}
 	else
@@ -76,7 +78,6 @@ void Model::InitGraphics(const Shader* shader, std::string textureLocation)
 	glBindTexture(GL_TEXTURE_2D, 0);
 	//delete sur;
 
-	this->attachedShader = (Shader*)shader;
 
 	SDL_FreeSurface(surface);
 

@@ -22,7 +22,7 @@ int main()
 
 	Shader std("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
 
-	auto model = new Model(window, &std, "./resource/images/container.jpg");
+	auto model = new Model(window, &std, "./resource/images/LuneHeroTitle.png");
 	while (1) 
 	{
 		window->Process();
