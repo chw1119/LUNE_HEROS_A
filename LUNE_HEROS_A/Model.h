@@ -22,9 +22,10 @@ private:
 	GLuint vertexArrayId;
 
 	GLuint vertexBufferId;
+	GLuint textureBufferId;
+
 	GLuint indexBufferId;
 
-	GLuint textureBufferId;
 
 	float xPos;
 	float yPos;

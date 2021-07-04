@@ -57,7 +57,12 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 		-ratioX, -ratioY,   0.f, 0.f, 1.f  //10
 	};
 
-
+	const GLfloat textureData[] = {
+		0.f, 0.f, //11
+		1.f, 0.f, //01
+		1.f, 1.f, //00
+		0.f, 1.f,  //10
+	};
 
 	const GLuint indexData[6] = {
 		0,1,2,0,2,3
@@ -69,27 +74,32 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 	glBindVertexArray(vertexArrayId);
 
 
-	glGenBuffers(2, &vertexBufferId);
+	glGenBuffers(3, &vertexBufferId);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferId);
 
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
 
-
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), 0);
 
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
+
+	glBindBuffer(GL_ARRAY_BUFFER, textureBufferId);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(textureData), textureData, GL_STATIC_DRAW);
+
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
+
+
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
+
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData), indexData, GL_STATIC_DRAW);
 
 
 	glEnableVertexAttribArray(0);
 
 	glEnableVertexAttribArray(1);
 
-
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
-
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData), indexData, GL_STATIC_DRAW);
 
 	texture->TextureIndex(attachedShader, "ourTexture", 0);
 	//texture->Bind();

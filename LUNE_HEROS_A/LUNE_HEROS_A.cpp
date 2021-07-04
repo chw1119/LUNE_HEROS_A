@@ -4,8 +4,30 @@
 
 float a = 0.f;
 
+class Mother 
+{
+public:
+	virtual void text() 
+	{
+		std::cout << "1";
+	}
+};
+
+class Child : public Mother
+{
+public:
+	virtual void text()
+	{
+		std::cout << "2";
+	}
+
+};
+
+
 int main()
 {
+	(new Child())->text();
+
 	GameWindow* window = nullptr;
 
 	Initialize::Init(&window);

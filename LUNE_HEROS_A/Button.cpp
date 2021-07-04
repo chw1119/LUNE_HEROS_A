@@ -11,3 +11,17 @@ void Button::Process(SDL_Event* event)
 {
 
 }
+
+void Button::Bind()
+{
+	if (isSelected)
+	{
+		SetTexture(activatedTexture);
+	}
+
+	activatedTexture->Bind();
+}
+
+void Button::Draw()
+{
+}
