@@ -17,9 +17,7 @@ private:
 	int fpsRate;
 
 	std::chrono::microseconds lastDraw;
-
-	std::vector<Texture*> textureList;
-
+	
 public:
 	LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count);
 	LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count, int fpsRate);
@@ -28,8 +26,6 @@ public:
 
 	virtual void Bind();
 	virtual void Draw();
-
-	Texture* GetNextTexture();
 
 };
 

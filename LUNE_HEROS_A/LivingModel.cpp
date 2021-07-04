@@ -6,14 +6,11 @@ LivingModel::LivingModel(GameWindow* windowParent, Shader* shader, Texture* text
 {
 	textureCount = count;
 
-	for (int a = 0; a < count; a++)
-	{
-		textureList.push_back(&texture[a]);
-	}
-
 	offsetNow = 0;
 
 	fpsRate = 1000 / 25;
+
+	lastDraw = Utility::GetCurrentMilliTimes();
 
 }
 
@@ -22,31 +19,28 @@ LivingModel::LivingModel(GameWindow* windowParent, Shader* shader, Texture* text
 {
 	textureCount = count;
 
-	for (int a = 0; a < count; a++)
-	{
-		textureList.push_back(&texture[a]);
-	}
-
 	offsetNow = 0;
 
-	this->fpsRate = fpsRate;
+	this->fpsRate = 1000 / fpsRate;
 
-}
+	lastDraw = Utility::GetCurrentMilliTimes();
 
-Texture* LivingModel::GetNextTexture()
-{
-	return textureList.at(offsetNow++ % textureList.size());
 }
 
 void LivingModel::Bind()
 {
 
-	if ((Utility::GetCurrentMilliTimes() - lastDraw).count() > fpsRate)
+	if ((Utility::GetCurrentMilliTimes() - lastDraw).count()/1000 > fpsRate)
 	{
-		SetTexture(GetNextTexture());
+		auto texture = GetTexture();
+		texture->SetRow(++offsetNow % texture->GetRowCount());
+
+		lastDraw = Utility::GetCurrentMilliTimes();
 	}
 
 	Model::Bind();
+
+
 }
 
 void LivingModel::Draw()
@@ -54,7 +48,5 @@ void LivingModel::Draw()
 	Bind();
 
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
-	lastDraw = Utility::GetCurrentMilliTimes();
 
 }

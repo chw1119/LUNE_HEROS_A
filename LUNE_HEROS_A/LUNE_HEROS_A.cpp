@@ -46,15 +46,19 @@ int main()
 
 	auto texture1 = new Texture("./resource/images/LuneHeroTitle.png");
 	auto texture2 = new Texture("./resource/images/titleBackground.jpg");
+	auto animated = new Texture("./resource/images/test.png",33,1);
+
 
 	auto model = new Model(window, &std, texture1);
 	auto model1 = new Model(window, &std, texture2);
+	auto model2 = new LivingModel(window, &std, animated, 0, 20);
 
-
+	int a = 0;
 	float temp = 0;
 
 	while (1) 
 	{
+
 		window->Process();
 
 		SDL_Delay(1000 / 60);
@@ -79,6 +83,8 @@ int main()
 		model->Resize(300,300);
 		model->Position(0.f, 100 + 10 * abs(cos(temp)));
 		model->Draw();
+
+		model2->Draw();
 
 		SDL_GL_SwapWindow(window->GetWindow());
 

@@ -3,25 +3,11 @@
 
 void Texture::InitBuffer()
 {
+	glGenBuffers(1, &textureBufferId);
 
-	auto rowSize = GetRowPerSize();
-	auto lineSize = GetLinePerSize();
+	RenewBuffer();
 
-	auto xPos = row * rowSize;
-	auto yPos = line * lineSize;
-
-	const GLfloat textureData[] = {
-		xPos, yPos, //00
-		xPos + rowSize, yPos, //10
-		xPos + rowSize, yPos + lineSize, //11
-		xPos, yPos + lineSize,  //01
-	};
-
-	glBindBuffer(GL_ARRAY_BUFFER, textureBufferId);
-
-	glBufferData(GL_ARRAY_BUFFER, sizeof(textureData), textureData, GL_STATIC_DRAW);
-
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 }
 
@@ -38,7 +24,7 @@ void Texture::RenewBuffer()
 		xPos, yPos, //00
 		xPos + rowSize, yPos, //10
 		xPos + rowSize, yPos + lineSize, //11
-		xPos, yPos + lineSize,  //01
+		xPos, yPos + lineSize  //01
 	};
 
 	glBindBuffer(GL_ARRAY_BUFFER, textureBufferId);
@@ -79,6 +65,10 @@ Texture::Texture(const std::string& textureUrl)
 	row = 0;
 	line = 0;
 
+
+	this->rowCount =  1;
+	this->lineCount = 1;
+
 	InitBuffer();
 }
 
@@ -114,6 +104,7 @@ Texture::Texture(const std::string& textureUrl, int rowCount, int lineCount)
 	SDL_FreeSurface(surface);
 
 	index = 0;
+
 	row = 0;
 	line = 0;
 
@@ -143,6 +134,16 @@ int Texture::GetIndex() const
 	return index;
 }
 
+int Texture::GetRowCount() const
+{
+	return rowCount;
+}
+
+int Texture::GetLineCount() const
+{
+	return lineCount;
+}
+
 void Texture::SetRow(int row)
 {
 	this->row = row;
@@ -165,4 +166,14 @@ GLfloat Texture::GetRowPerSize()
 GLfloat Texture::GetLinePerSize()
 {
 	return 1.0f / lineCount;
+}
+
+void Texture::AttachToVAO(GLuint vaoId, int pointerId)
+{
+	glBindVertexArray(vaoId);
+
+	glBindBuffer(GL_ARRAY_BUFFER, textureBufferId);
+
+	glVertexAttribPointer(pointerId, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
+
 }

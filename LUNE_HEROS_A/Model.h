@@ -22,8 +22,6 @@ private:
 	GLuint vertexArrayId;
 
 	GLuint vertexBufferId;
-	GLuint textureBufferId;
-
 	GLuint indexBufferId;
 
 

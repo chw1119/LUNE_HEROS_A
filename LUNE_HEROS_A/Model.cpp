@@ -17,11 +17,11 @@ void Model::RenewBuffer()
 	float ratioYPos = yPos / (float)h;
 
 
-	const GLfloat vertexData[(3 + 2) * 4] = {
-		-ratioX,  ratioY,   0.f, 0.f, 0.f, //11
-		 ratioX,  ratioY,   0.f, 1.f, 0.f, //01
-		 ratioX, -ratioY,   0.f, 1.f, 1.f, //00
-		-ratioX, -ratioY,   0.f, 0.f, 1.f  //10
+	const GLfloat vertexData[3 * 4] = {
+		-ratioX,  ratioY,   0.f,
+		 ratioX,  ratioY,   0.f,
+		 ratioX, -ratioY,   0.f, 
+		-ratioX, -ratioY,   0.f
 	};
 
 
@@ -50,18 +50,11 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 	std::cout << "w : " <<  ratioX<< "h : " << ratioY<< std::endl;
 
 
-	const GLfloat vertexData[(3 + 2) * 4] = {
-		-ratioX,  ratioY,   0.f, 0.f, 0.f, //11
-		 ratioX,  ratioY,   0.f, 1.f, 0.f, //01
-		 ratioX, -ratioY,   0.f, 1.f, 1.f, //00
-		-ratioX, -ratioY,   0.f, 0.f, 1.f  //10
-	};
-
-	const GLfloat textureData[] = {
-		0.f, 0.f, //11
-		1.f, 0.f, //01
-		1.f, 1.f, //00
-		0.f, 1.f,  //10
+	const GLfloat vertexData[3 * 4] = {
+		-ratioX,  ratioY,   0.f,
+		 ratioX,  ratioY,   0.f,
+		 ratioX, -ratioY,   0.f,
+		-ratioX, -ratioY,   0.f
 	};
 
 	const GLuint indexData[6] = {
@@ -74,22 +67,16 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 	glBindVertexArray(vertexArrayId);
 
 
-	glGenBuffers(3, &vertexBufferId);
+	glGenBuffers(2, &vertexBufferId);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferId);
 
 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), 0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
 
-
-	glBindBuffer(GL_ARRAY_BUFFER, textureBufferId);
-
-	glBufferData(GL_ARRAY_BUFFER, sizeof(textureData), textureData, GL_STATIC_DRAW);
-
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
-
+	texture->AttachToVAO(vertexArrayId, 1);
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
 

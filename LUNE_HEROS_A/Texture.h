@@ -9,7 +9,6 @@
 #include <iostream>
 
 #include "Shader.h"
-#include "Shader.h"
 
 
 class Texture
@@ -44,6 +43,10 @@ public:
 
 	int GetIndex() const;
 
+	int GetRowCount() const;
+
+	int GetLineCount() const;
+
 	void SetRow(int row);
 
 	void SetLine(int Line);
@@ -51,6 +54,8 @@ public:
 	GLfloat GetRowPerSize();
 
 	GLfloat GetLinePerSize();
+
+	void AttachToVAO(GLuint vaoId, int pointerId);
 };
 
 #endif
