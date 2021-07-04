@@ -22,3 +22,8 @@ std::pair<int, int> Utility::GetFullScreenSize()
 		return pair;
 }
 
+std::chrono::milliseconds Utility::GetCurrentMilliTimes()
+{
+	return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
+}
+

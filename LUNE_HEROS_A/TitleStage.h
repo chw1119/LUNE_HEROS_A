@@ -6,6 +6,7 @@
 
 class TitleStage : public Stage
 {
+
 private:
 
 public:

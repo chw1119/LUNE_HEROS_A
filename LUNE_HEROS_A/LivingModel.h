@@ -2,22 +2,34 @@
 #define _LIVEING_MODEL
 
 #include <vector>
+#include <chrono>
 
 #include "Model.h"
+#include "Utility.h"
 #include "Texture.h"
 
 class LivingModel : public Model
 {
 private:
-
 	int offsetNow;
+	int textureCount;
 
-	std::vector<Texture> textureList;
+	int fpsRate;
+
+	std::chrono::microseconds lastDraw;
+
+	std::vector<Texture*> textureList;
 
 public:
-	LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture);
+	LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count);
+	LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count, int fpsRate);
 
 	//LivingModel();
+
+	virtual void Bind();
+	virtual void Draw();
+
+	Texture* GetNextTexture();
 
 };
 

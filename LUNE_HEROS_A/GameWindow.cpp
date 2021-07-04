@@ -157,7 +157,7 @@ SDL_Renderer* GameWindow::GetRenderer() const
 
 void GameWindow::Resize(float xSize, float ySize)
 {
-	SDL_SetWindowSize(window, (int)xSize, (int)ySize);
+	//SDL_SetWindowSize(window, (int)xSize, (int)ySize);
 
 	glViewport(0, 0, xSize, ySize);
 }

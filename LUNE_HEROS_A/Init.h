@@ -24,7 +24,7 @@ namespace Initialize
 		error = glGetError();
 		if (error != GL_NO_ERROR)
 		{
-			printf("Error initializing OpenGL! %s\n", gluErrorString(error));
+			printf("Error initializing OpenGL! 11%s\n", gluErrorString(error));
 			success = false;
 			return -1;
 		}
@@ -41,7 +41,7 @@ namespace Initialize
 		error = glGetError();
 		if (error != GL_NO_ERROR)
 		{
-			printf("Error initializing OpenGL! %s\n", gluErrorString(error));
+			printf("Error initializing OpenGL! 22%s\n", gluErrorString(error));
 			success = false;
 
 			return -1;

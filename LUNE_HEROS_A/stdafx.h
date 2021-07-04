@@ -16,6 +16,7 @@
 #include "Model.h"
 #include "Utility.h"
 #include "Resizable.h"
+#include "LivingModel.h"
 #include "GameWindow.h"
 
 //#include "EventManager.h"

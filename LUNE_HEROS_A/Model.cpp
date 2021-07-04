@@ -8,7 +8,7 @@ void Model::RenewBuffer()
 	int w;
 	int h;
 
-	SDL_GetWindowSize(windowParent->GetWindow(), &w, &h);
+	SDL_GL_GetDrawableSize(windowParent->GetWindow(), &w, &h);
 
 	float ratioX = xSize / (float)w;
 	float ratioY = ySize / (float)h;
@@ -18,10 +18,10 @@ void Model::RenewBuffer()
 
 
 	const GLfloat vertexData[(3 + 2) * 4] = {
-		-ratioX / 2,  ratioY/2,   0.f, 0.f, 0.f, //11
-		 ratioX / 2,  ratioY/2,   0.f, 1.f, 0.f, //01
-		 ratioX / 2, -ratioY/2,   0.f, 1.f, 1.f, //00
-		-ratioX / 2, -ratioY/2,   0.f, 0.f, 1.f  //10
+		-ratioX,  ratioY,   0.f, 0.f, 0.f, //11
+		 ratioX,  ratioY,   0.f, 1.f, 0.f, //01
+		 ratioX, -ratioY,   0.f, 1.f, 1.f, //00
+		-ratioX, -ratioY,   0.f, 0.f, 1.f  //10
 	};
 
 
@@ -47,12 +47,14 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 	float ratioXPos = xPos / (float)w;
 	float ratioYPos = yPos / (float)h;
 
+	std::cout << "w : " <<  ratioX<< "h : " << ratioY<< std::endl;
+
 
 	const GLfloat vertexData[(3 + 2) * 4] = {
-		-ratioX / 2,  ratioY / 2,   0.f, 0.f, 0.f, //11
-		 ratioX / 2,  ratioY / 2,   0.f, 1.f, 0.f, //01
-		 ratioX / 2, -ratioY / 2,   0.f, 1.f, 1.f, //00
-		-ratioX / 2, -ratioY / 2,   0.f, 0.f, 1.f  //10
+		-ratioX,  ratioY,   0.f, 0.f, 0.f, //11
+		 ratioX,  ratioY,   0.f, 1.f, 0.f, //01
+		 ratioX, -ratioY,   0.f, 1.f, 1.f, //00
+		-ratioX, -ratioY,   0.f, 0.f, 1.f  //10
 	};
 
 
@@ -90,12 +92,12 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData), indexData, GL_STATIC_DRAW);
 
 	texture->TextureIndex(attachedShader, "ourTexture", 0);
-	texture->Bind();
+	//texture->Bind();
 
 	auto error = glGetError();
 	if (error != GL_NO_ERROR)
 	{
-		printf("Error initializing OpenGL! %s\n", gluErrorString(error));
+		printf("Error initializing OpenGL! 33%s\n", gluErrorString(error));
 	}
 
 }
@@ -113,6 +115,11 @@ Model::Model(GameWindow* _windowParent, Shader* shader, Texture* texture, float 
 	InitGraphics(shader, texture);
 }
 
+Model::~Model()
+{
+
+}
+
 int Model::GetStatus() const
 {
 	return status;
@@ -124,6 +131,19 @@ void Model::SetStatus(int status)
 	this->status = status;
 }
 
+Texture* Model::GetTexture() const
+{
+	return texture;
+}
+
+void Model::SetTexture(Texture* texture)
+{
+	auto lastIndex = this->texture->GetIndex();
+
+	this->texture = texture;
+	this->texture->TextureIndex(attachedShader, "ourShader", lastIndex);
+}
+
 
 void Model::Bind()
 {
@@ -131,7 +151,7 @@ void Model::Bind()
 	int w;
 	int h;
 
-	SDL_GetWindowSize(windowParent->GetWindow(), &w, &h);
+	SDL_GL_GetDrawableSize(windowParent->GetWindow(), &w, &h);
 
 	float ratioXPos = xPos / (float)w;
 	float ratioYPos = yPos / (float)h;

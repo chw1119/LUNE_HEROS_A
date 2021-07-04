@@ -34,6 +34,7 @@ Texture::Texture(const std::string& textureUrl)
 
 void Texture::TextureIndex(Shader* shader, const std::string& uniformName, int index)
 {
+	shader->Use();
 	this->index = index;
 	auto num = glGetUniformLocation(shader->ID, uniformName.c_str());
 	glUniform1i(num, index);
@@ -43,4 +44,9 @@ void Texture::Bind()
 {
 	glActiveTexture(GL_TEXTURE0 + index);
 	glBindTexture(GL_TEXTURE_2D, textureId);
+}
+
+int Texture::GetIndex() const
+{
+	return index;
 }

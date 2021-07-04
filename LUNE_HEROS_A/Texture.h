@@ -26,6 +26,8 @@ public:
 	void TextureIndex(Shader* shader,const std::string& uniformName ,int index);
 
 	void Bind();
+
+	int GetIndex() const;
 };
 
 #endif

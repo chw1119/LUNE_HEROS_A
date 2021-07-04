@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="LivingModel.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="GameWindow.h" />

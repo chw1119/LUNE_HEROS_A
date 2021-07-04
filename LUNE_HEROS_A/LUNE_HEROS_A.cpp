@@ -23,10 +23,11 @@ int main()
 	Shader std("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
 
 	auto texture1 = new Texture("./resource/images/LuneHeroTitle.png");
-	auto texture2 = new Texture("./resource/images/container.jpg");
+	auto texture2 = new Texture("./resource/images/titleBackground.jpg");
 
 	auto model = new Model(window, &std, texture1);
 	auto model1 = new Model(window, &std, texture2);
+
 
 	float temp = 0;
 
@@ -35,18 +36,27 @@ int main()
 		window->Process();
 
 		SDL_Delay(1000 / 60);
-		temp += 0.1f;
+		temp += 0.03f;
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		for (int a = 0; a < 10; a++) 
-		{
-			model->Resize(50  * (10-a), 50 * (10 - a));
-			model->Position(temp, temp);
-			model->Draw();
 
-		}
+
+		int w;
+		int h;
+
+		SDL_GetWindowSize(window->GetWindow(), &w, &h);
+
+
+		//printf("w : %d h : %d", w, h);
+
+		model1->Resize(w,h);
+		model1->Draw();
+
+		model->Resize(300,300);
+		model->Position(0.f, 100 + 10 * abs(cos(temp)));
+		model->Draw();
 
 		SDL_GL_SwapWindow(window->GetWindow());
 

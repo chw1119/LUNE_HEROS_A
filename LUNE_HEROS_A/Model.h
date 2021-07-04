@@ -50,6 +50,8 @@ public:
 
 	Model(GameWindow* windowParent, Shader* shader, Texture* texture, float xpos, float ypos, float xsize, float ysize);
 
+	virtual ~Model();
+
 	int GetStatus() const;
 
 	void SetStatus(int status);
@@ -58,10 +60,10 @@ public:
 
 	void SetTexture(Texture* texture);
 	
-	void Bind();
 
 	void Position(float x, float y);
 
+	virtual void Bind();
 
 	virtual void Draw();
 
