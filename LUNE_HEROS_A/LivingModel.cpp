@@ -1,7 +1,12 @@
 #include "LivingModel.h"
 
 
-LivingModel::LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count) 
+LivingModel::LivingModel()
+{
+
+}
+
+LivingModel::LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count)
 	: Model(windowParent,shader,texture)
 {
 	textureCount = count;

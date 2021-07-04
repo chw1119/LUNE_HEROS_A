@@ -1,11 +1,12 @@
 #include "Stage.h"
 
-void Stage::Draw()
+Stage::Stage(GameWindow* window)
 {
-
+	this->window = window;
 }
 
-void Stage::ReSize(float x, float y)
+GameWindow* Stage::GetWindow() const
 {
-
+	return window;
 }
+

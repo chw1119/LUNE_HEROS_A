@@ -45,6 +45,8 @@ private:
 
 public:
 
+	Model();
+
 	Model(GameWindow* windowParent, Shader* shader, Texture* texture);
 
 	Model(GameWindow* windowParent, Shader* shader, Texture* texture, float xpos, float ypos, float xsize, float ysize);

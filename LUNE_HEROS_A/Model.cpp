@@ -99,6 +99,11 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 
 }
 
+Model::Model()
+{
+
+}
+
 Model::Model(GameWindow* _windowParent,Shader* shader, Texture* texture) : xSize(500.f), ySize(500.f), xPos(0.f), yPos(0.f), windowParent(_windowParent)
 {
 	SetStatus(STATUS_READY);

@@ -19,6 +19,7 @@ private:
 	std::chrono::microseconds lastDraw;
 	
 public:
+	LivingModel();
 	LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count);
 	LivingModel(GameWindow* windowParent, Shader* shader, Texture* texture, int count, int fpsRate);
 

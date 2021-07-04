@@ -32,6 +32,11 @@ void Texture::RenewBuffer()
 	glBufferData(GL_ARRAY_BUFFER, sizeof(textureData), textureData, GL_STATIC_DRAW);
 }
 
+Texture::Texture()
+{
+
+}
+
 Texture::Texture(const std::string& textureUrl)
 {
 	glGenTextures(1, &textureId);

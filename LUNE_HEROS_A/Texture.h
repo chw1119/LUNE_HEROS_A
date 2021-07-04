@@ -33,6 +33,8 @@ private:
 
 public:
 
+	Texture();
+
 	Texture(const std::string& textureUrl);
 
 	Texture(const std::string& textureUrl,int rowCount, int lineCount);
