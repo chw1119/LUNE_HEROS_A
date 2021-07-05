@@ -1,15 +1,16 @@
 #include "TitleStage.h"
 
+static float bounding = 0.f;
+
 TitleStage::TitleStage(GameWindow* window) : Stage(window)
 {
-	standardShader = Shader("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
+	standardShader = new Shader("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
 
-	logoTexture = Texture(TITLE_LOGO_FILE_ROUTE);
-	backTexture = Texture(BACKGROUND_FILE_ROUTE);
+	logoTexture = new Texture(TITLE_LOGO_FILE_ROUTE);
+	backTexture = new Texture(BACKGROUND_FILE_ROUTE);
 
-	titleLogo = Model(window, &standardShader, &logoTexture);
-	background = Model(window, &standardShader, &backTexture);
-
+	titleLogo  = new Model(GetWindow(), standardShader, logoTexture);
+	background = new Model(GetWindow(), standardShader, backTexture);
 
 	//titleLogo - new Model();
 }
@@ -25,17 +26,17 @@ void TitleStage::Draw()
 
 	SDL_GetWindowSize(GetWindow()->GetWindow(), &w, &h);
 
-
 	//printf("w : %d h : %d", w, h);
 
-	background.Resize(w, h);
-	background.Draw();
+	background->Resize(w, h);
+	background->Draw();
 
-	titleLogo.Resize(300, 300);
-	titleLogo.Position(0.f, 100 + 10 * abs(cos(Utility::GetCurrentMilliTimes().count()/100000)));
-	titleLogo.Draw();
+	titleLogo->Resize(300, 300);
+	titleLogo->Position(0.f, 120 + 20 * cos(bounding += 0.1));
+	titleLogo->Draw();
 
-	SDL_GL_SwapWindow(GetWindow()->GetWindow());
+	//std::cout << "123";
+	
 }
 
 void TitleStage::Process(SDL_Event* event)

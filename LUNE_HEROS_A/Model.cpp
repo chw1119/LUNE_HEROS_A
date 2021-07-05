@@ -34,6 +34,7 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 {
 
 	this->attachedShader = (Shader*)shader;
+	//this->attachedShader->Use();
 	this->texture = texture;
 
 	int w;
@@ -67,7 +68,7 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 	glBindVertexArray(vertexArrayId);
 
 
-	glGenBuffers(2, &vertexBufferId);
+	glGenBuffers(1, &vertexBufferId);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferId);
 
@@ -76,26 +77,24 @@ void Model::InitGraphics(const Shader* shader, Texture* texture)
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), 0);
 
+	
+
 	texture->AttachToVAO(vertexArrayId, 1);
+
+
+	glGenBuffers(1, &indexBufferId);
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferId);
 
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData), indexData, GL_STATIC_DRAW);
 
-
 	glEnableVertexAttribArray(0);
 
 	glEnableVertexAttribArray(1);
 
-
 	texture->TextureIndex(attachedShader, "ourTexture", 0);
-	//texture->Bind();
 
-	auto error = glGetError();
-	if (error != GL_NO_ERROR)
-	{
-		printf("Error initializing OpenGL! 33%s\n", gluErrorString(error));
-	}
+	//texture->Bind();
 
 }
 
@@ -106,6 +105,12 @@ Model::Model()
 
 Model::Model(GameWindow* _windowParent,Shader* shader, Texture* texture) : xSize(500.f), ySize(500.f), xPos(0.f), yPos(0.f), windowParent(_windowParent)
 {
+
+	auto error = glGetError();
+	if (error != GL_NO_ERROR)
+	{
+		printf("Error initializing OpenGL! ÂB%s\n", gluErrorString(error));
+	}
 	SetStatus(STATUS_READY);
 	InitGraphics(shader, texture);
 }

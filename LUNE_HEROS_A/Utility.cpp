@@ -1,6 +1,19 @@
 #include "Utility.h"
 
-std::pair<int, int> Utility::GetFullScreenSize()
+inline std::pair<int, int> Utility::GetMouseLocation()
+{
+	int x, y;
+
+	SDL_GetMouseState(&x, &y);
+	auto temp = std::pair<int, int>();
+
+	temp.first = x;
+	temp.second = y;
+
+	return temp;
+}
+
+inline std::pair<int, int> Utility::GetFullScreenSize()
 {
 		SDL_DisplayMode dm;
 
@@ -22,7 +35,7 @@ std::pair<int, int> Utility::GetFullScreenSize()
 		return pair;
 }
 
-std::chrono::milliseconds Utility::GetCurrentMilliTimes()
+inline std::chrono::milliseconds Utility::GetCurrentMilliTimes()
 {
 	return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch());
 }

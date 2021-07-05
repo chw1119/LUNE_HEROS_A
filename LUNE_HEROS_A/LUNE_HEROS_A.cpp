@@ -26,32 +26,15 @@ public:
 
 int main()
 {
-	(new Child())->text();
 
 	GameWindow* window = nullptr;
 
 	Initialize::Init(&window);
 
-	auto test = Utility::GetFullScreenSize();
-
-	std::cout << test.first << "  " << test.second;
-
 	window->Show();
 
-	//window->FullScreen(true);
+	TitleStage t(window);
 
-	SDL_Event event;
-
-	Shader std("./resource/shaders/vertex/standardVertexShader.glsl", "./resource/shaders/fragment/standardFragmentShader.glsl");
-
-	auto texture1 = new Texture("./resource/images/LuneHeroTitle.png");
-	auto texture2 = new Texture("./resource/images/titleBackground.jpg");
-	auto animated = new Texture("./resource/images/test.png",33,1);
-
-
-	auto model = new Model(window, &std, texture1);
-	auto model1 = new Model(window, &std, texture2);
-	auto model2 = new LivingModel(window, &std, animated, 0, 20);
 
 	int a = 0;
 	float temp = 0;
@@ -62,32 +45,16 @@ int main()
 		window->Process();
 
 		SDL_Delay(1000 / 60);
-		temp += 0.03f;
 
-		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
-
-
-		int w;
-		int h;
-
-		SDL_GetWindowSize(window->GetWindow(), &w, &h);
-
-
-		//printf("w : %d h : %d", w, h);
-
-		model1->Resize(w,h);
-		model1->Draw();
-
-		model->Resize(300,300);
-		model->Position(0.f, 100 + 10 * abs(cos(temp)));
-		model->Draw();
-
-		model2->Draw();
+		t.Draw();
 
 		SDL_GL_SwapWindow(window->GetWindow());
 
+		int x, y;
+
+		SDL_GetMouseState(&x, &y);
+
+		std::cout << x << " " << y << std::endl;
 	}
 }
 

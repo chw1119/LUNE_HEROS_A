@@ -15,6 +15,8 @@
 #include "Init.h"
 #include "Model.h"
 #include "Utility.h"
+#include "Stage.h"
+#include "TitleStage.h"
 #include "Resizable.h"
 #include "LivingModel.h"
 #include "GameWindow.h"

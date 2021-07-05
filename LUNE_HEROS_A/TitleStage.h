@@ -19,13 +19,13 @@ class TitleStage : public Stage
 
 private:
 
-	Shader standardShader;
+	Shader* standardShader;
 
-	Texture logoTexture;
-	Texture backTexture;
+	Texture* logoTexture;
+	Texture* backTexture;
 
-	Model titleLogo;
-	Model background;
+	Model* titleLogo;
+	Model* background;
 
 
 public:

@@ -38,7 +38,7 @@ namespace Initialize
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 
-		glEnable(GL_TEXTURE_2D);
+		//glEnable(GL_TEXTURE_2D);
 
 		//Check for error
 		error = glGetError();
