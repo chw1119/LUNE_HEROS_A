@@ -13,6 +13,27 @@ TitleStage::TitleStage(GameWindow* window) : Stage(window)
 	background = new Model(GetWindow(), standardShader, backTexture);
 
 	//titleLogo - new Model();
+
+	eventManager = new EventManager();
+
+
+	eventManager->SetOnKeyDown(
+		(std::function<void(SDL_Event*)>)[&](SDL_Event* event)->void
+		{
+			if (event->type == SDL_KEYDOWN)
+			{
+				auto key = event->key.keysym.sym;
+
+				switch (key)
+				{
+				case SDLK_w:
+					std::cout << "w pressed" << std::endl;
+				default:
+					break;
+				}
+			}
+		}
+	);
 }
 
 

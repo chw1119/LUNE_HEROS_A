@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Drawable.cpp" />
+    <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="LivingModel.cpp" />
     <ClCompile Include="LUNE_HEROS_A.cpp" />

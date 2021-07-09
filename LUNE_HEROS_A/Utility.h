@@ -16,9 +16,9 @@ class Utility
 {
 public:
 
-	inline static std::pair<int, int> GetMouseLocation();
-	inline static std::pair<int, int> GetFullScreenSize();
-	inline static std::chrono::milliseconds GetCurrentMilliTimes();
+	static std::pair<int, int> GetMouseLocation();
+	static std::pair<int, int> GetFullScreenSize();
+	static std::chrono::milliseconds GetCurrentMilliTimes();
 };
 
 

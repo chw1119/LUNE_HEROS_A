@@ -6,6 +6,7 @@
 
 
 #include <SDL.h>
+#include <functional>
 
 #include "Stage.h"
 #include "Model.h"
@@ -13,6 +14,7 @@
 #include "Texture.h"
 #include "Utility.h"
 #include "LivingModel.h"
+#include "EventManager.h"
 
 class TitleStage : public Stage
 {
@@ -27,6 +29,7 @@ private:
 	Model* titleLogo;
 	Model* background;
 
+	EventManager* eventManager;
 
 public:
 	TitleStage(GameWindow* window);
