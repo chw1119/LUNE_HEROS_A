@@ -26,8 +26,43 @@ TitleStage::TitleStage(GameWindow* window) : Stage(window)
 
 				switch (key)
 				{
+				case SDLK_UP:
 				case SDLK_w:
-					std::cout << "w pressed" << std::endl;
+
+
+					break;
+
+				case SDLK_LEFT:
+				case SDLK_a:
+
+					break;
+
+				case SDLK_DOWN:
+				case SDLK_s:
+
+					break;
+
+				case SDLK_RIGHT:
+				case SDLK_d:
+
+					break;
+
+				case SDLK_j:
+				case SDLK_c:
+
+					break;
+
+				case SDLK_k:
+				case SDLK_x:
+					break;
+
+				case SDLK_l:
+				case SDLK_z:
+
+					break;
+
+
+
 				default:
 					break;
 				}

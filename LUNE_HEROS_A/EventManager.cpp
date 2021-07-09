@@ -30,6 +30,26 @@ void EventManager::SetOnKeyUp(std::function<void(SDL_Event*)> func)
 	onKeyUp = func;
 }
 
+bool EventManager::GetIsKeyDown(int index) const
+{
+	return KEYS[index];
+}
+
+void EventManager::SetIsKeyDown(int index, bool isDown)
+{
+	KEYS[index] = isDown;
+}
+
+bool EventManager::GetIsMouseDown() const
+{
+	return isMouseClicked;
+}
+
+void EventManager::SetIsMouseDown(bool is)
+{
+	isMouseClicked = is;
+}
+
 const std::function<void(SDL_Event*)> EventManager::operator[](const std::string& str)
 {
 
