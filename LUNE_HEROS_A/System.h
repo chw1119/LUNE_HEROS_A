@@ -1,12 +1,12 @@
-#ifndef _LOGIC
-#define _LOGIC
+#ifndef _System
+#define _System
 
 #include "Stage.h"
 #include "Looper.h"
 #include "TitleStage.h"
 #include "GameWindow.h"
 
-class Logic
+class System
 {
 private:
 
@@ -26,9 +26,9 @@ private:
 
 public:
 
-	Logic();
-	Logic(GameWindow* window);
-	Logic(GameWindow* window, int stageId);
+	System();
+	System(GameWindow* window);
+	System(GameWindow* window, int stageId);
 
 	
 

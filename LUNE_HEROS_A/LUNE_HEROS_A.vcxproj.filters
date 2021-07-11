@@ -99,7 +99,7 @@
     <ClCompile Include="EventManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Logic.cpp">
+    <ClCompile Include="System.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
@@ -158,7 +158,7 @@
     <ClInclude Include="Button.h">
       <Filter>헤더 파일\graphic\GL\widget</Filter>
     </ClInclude>
-    <ClInclude Include="Logic.h">
+    <ClInclude Include="System.h">
       <Filter>헤더 파일\game\logic</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">

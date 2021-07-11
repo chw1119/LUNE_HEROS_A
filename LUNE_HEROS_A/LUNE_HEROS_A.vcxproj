@@ -162,7 +162,7 @@
     <ClCompile Include="GameWindow.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="LivingModel.cpp" />
-    <ClCompile Include="Logic.cpp" />
+    <ClCompile Include="System.cpp" />
     <ClCompile Include="LUNE_HEROS_A.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Resizable.cpp" />
@@ -182,7 +182,7 @@
     <ClInclude Include="Item.h" />
     <ClInclude Include="KeyboardEvent.h" />
     <ClInclude Include="LivingModel.h" />
-    <ClInclude Include="Logic.h" />
+    <ClInclude Include="System.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="MouseEvent.h" />
     <ClInclude Include="Prefix.h" />
