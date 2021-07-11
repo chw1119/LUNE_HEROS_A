@@ -49,6 +49,15 @@
     <Filter Include="헤더 파일\game\data\item">
       <UniqueIdentifier>{5bd67172-6e11-4d21-a0c9-535b3c29c8a4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\game\data\item\equipment">
+      <UniqueIdentifier>{667c2f5a-4e4c-4282-9c96-c1dadeda0a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\graphic\in-game">
+      <UniqueIdentifier>{03f7b25a-b2c0-4733-9f2d-42f5cd5f9f8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\graphic\GL\shader">
+      <UniqueIdentifier>{43c9549a-3351-416b-b4fa-1b1dacd9586e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HEROS_A.cpp">
@@ -96,6 +105,9 @@
     <ClCompile Include="Item.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -128,9 +140,6 @@
     <ClInclude Include="Drawable.h">
       <Filter>헤더 파일\graphic\interface</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>헤더 파일\graphic\GL</Filter>
-    </ClInclude>
     <ClInclude Include="Model.h">
       <Filter>헤더 파일\graphic\GL</Filter>
     </ClInclude>
@@ -154,6 +163,15 @@
     </ClInclude>
     <ClInclude Include="Item.h">
       <Filter>헤더 파일\game\data\item</Filter>
+    </ClInclude>
+    <ClInclude Include="Prefix.h">
+      <Filter>헤더 파일\game\data\item</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>헤더 파일\graphic\in-game</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>헤더 파일\graphic\GL\shader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
