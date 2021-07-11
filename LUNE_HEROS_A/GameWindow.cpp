@@ -107,16 +107,6 @@ void GameWindow::Process()
 {
 	SDL_Event event;
 
-	int isEmpty;
-
-	while (isEmpty = Poll(&event)) 
-	{
-		Event::ProcessEvent(&event, this);
-
-	}
-
-
-
 }
 
 void GameWindow::FullScreen(bool isFull)

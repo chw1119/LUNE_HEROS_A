@@ -46,6 +46,9 @@
     <Filter Include="헤더 파일\game\logic">
       <UniqueIdentifier>{7b0b3204-2db6-48eb-b4c1-fd51fdd0d5dd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\game\data\item">
+      <UniqueIdentifier>{5bd67172-6e11-4d21-a0c9-535b3c29c8a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HEROS_A.cpp">
@@ -85,6 +88,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="EventManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Logic.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -139,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="Button.h">
       <Filter>헤더 파일\graphic\GL\widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic.h">
+      <Filter>헤더 파일\game\logic</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>헤더 파일\game\data\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

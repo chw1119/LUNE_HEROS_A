@@ -4,6 +4,8 @@
 #define TITLE_LOGO_FILE_ROUTE "./resource/images/LuneHeroTitle.png"
 #define BACKGROUND_FILE_ROUTE "./resource/images/titleBackground.jpg"
 
+#define TITLE_STAGE_ID 0
+
 
 #include <SDL.h>
 #include <functional>
