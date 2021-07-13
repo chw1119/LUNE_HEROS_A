@@ -57,7 +57,7 @@ TitleStage::TitleStage(GameWindow* window) : Stage(window)
 		{
 			if (event->type == SDL_MOUSEMOTION)
 			{
-
+				
 			}
 		}
 	);
@@ -100,7 +100,7 @@ void TitleStage::Draw()
 
 void TitleStage::Process(SDL_Event* event)
 {
-
+	eventManager->Process(event);
 }
 
 

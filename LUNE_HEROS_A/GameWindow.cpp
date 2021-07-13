@@ -103,12 +103,6 @@ int GameWindow::Poll(SDL_Event* event)
 	return SDL_PollEvent(event);
 }
 
-void GameWindow::Process()
-{
-	SDL_Event event;
-
-}
-
 void GameWindow::FullScreen(bool isFull)
 {
 	if (isFull) {

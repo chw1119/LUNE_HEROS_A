@@ -11,7 +11,12 @@ void StageManager::CreateStage(int id)
 
 StageManager::StageManager(GameWindow* _window) : window(_window)
 {
+	CreateStage(TITLE_STAGE_ID);
+}
 
+StageManager::StageManager(GameWindow* _window, int stageId) : window(_window)
+{
+	CreateStage(stageId);
 }
 
 Stage* StageManager::GetStage(int StageId)

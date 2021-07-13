@@ -95,7 +95,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>.\modules\SDL2-devel-2.0.14-VC\SDL2-2.0.14\lib\x86\;.\modules\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86\;.\modules\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\modules\SDL2-devel-2.0.14-VC\SDL2-2.0.14\lib\x86\;$(ProjectDir)\modules\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86\;$(ProjectDir)\modules\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -115,7 +115,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>.\modules\SDL2-devel-2.0.14-VC\SDL2-2.0.14\lib\x86\;.\modules\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86\;.\modules\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\modules\SDL2-devel-2.0.14-VC\SDL2-2.0.14\lib\x86\;$(ProjectDir)\modules\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86\;$(ProjectDir)\modules\glew-2.1.0-win32\glew-2.1.0\lib\Release\Win32\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

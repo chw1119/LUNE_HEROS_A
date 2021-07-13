@@ -40,6 +40,8 @@ public:
 	bool GetIsMouseDown()const;
 	void SetIsMouseDown(bool is);
 
+	void Process(SDL_Event* event);
+
 	const std::function<void(SDL_Event*)> operator[] (const std::string& str);
 };
 

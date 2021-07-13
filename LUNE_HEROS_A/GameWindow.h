@@ -26,8 +26,6 @@ public:
 
 	void Hide();
 
-	void Process();
-
 	void FullScreen(bool isFull);
 
 	void SetOpacity(float op);
