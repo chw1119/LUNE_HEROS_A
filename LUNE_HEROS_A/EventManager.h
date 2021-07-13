@@ -9,7 +9,6 @@ class EventManager
 {
 private:
 
-	bool KEYS[322];
 	bool isMouseClicked;
 
 	float mousePosX;
@@ -26,6 +25,7 @@ private:
 	std::function<void(SDL_Event*)> windowEvent = nullptr;
 
 public:
+	bool KEYS[322];
 
 	EventManager();
 

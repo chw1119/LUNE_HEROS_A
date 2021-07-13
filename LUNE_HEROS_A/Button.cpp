@@ -58,10 +58,30 @@ void Button::Process(SDL_Event* event)
 void Button::Bind()
 {
 
+	if (isSelected)
+	{
+		if (activatedTexture != nullptr)
+		{
+			SetTexture(activatedTexture);
+
+		}
+	}
+	else
+	{
+		SetTexture(standerdTexture);
+		
+	}
+
+	Model::Bind();
 }
 
 void Button::Draw()
 {
+	Bind();
+
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 }
 

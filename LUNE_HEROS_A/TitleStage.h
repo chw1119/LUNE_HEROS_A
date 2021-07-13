@@ -1,8 +1,9 @@
 #ifndef _TITLE_STAGE
 #define _TITLE_STAGE
 
-#define TITLE_LOGO_FILE_ROUTE "./resource/images/LuneHeroTitle.png"
-#define BACKGROUND_FILE_ROUTE "./resource/images/titleBackground.jpg"
+#define TITLE_LOGO_FILE_ROUTE  "./resource/images/LuneHeroTitle.png"
+#define BACKGROUND_FILE_ROUTE  "./resource/images/titleBackground.jpg"
+#define STARTBUTTON_FILE_ROUTE "./resource/images/button1.png"
 
 #define TITLE_STAGE_ID 0
 
@@ -28,6 +29,7 @@ private:
 
 	Texture* logoTexture;
 	Texture* backTexture;
+	Texture* buttonTexture;
 
 	Model* titleLogo;
 	Model* background;

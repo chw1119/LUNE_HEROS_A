@@ -8,9 +8,25 @@ TitleStage::TitleStage(GameWindow* window) : Stage(window)
 
 	logoTexture = new Texture(TITLE_LOGO_FILE_ROUTE);
 	backTexture = new Texture(BACKGROUND_FILE_ROUTE);
+	buttonTexture = new Texture(STARTBUTTON_FILE_ROUTE);
 
 	titleLogo  = new Model(GetWindow(), standardShader, logoTexture);
 	background = new Model(GetWindow(), standardShader, backTexture);
+
+	startButton = new Button(GetWindow(), standardShader, buttonTexture, nullptr);
+
+	startButton->SetOnSelect([&]()
+		{
+			std::cout << "test button" << std::endl;
+		}
+	);
+
+	startButton->SetOnNotSelect([&]()
+		{
+			std::cout << "test button NOT" << std::endl;
+		}
+	);
+
 
 	//titleLogo - new Model();
 
@@ -170,6 +186,11 @@ void TitleStage::Draw()
 	titleLogo->Position(0.f, 120 + 20 * cos(bounding += 0.1));
 	titleLogo->Draw();
 
+	startButton->Resize(300, 200);
+	startButton->Position(0.f, -300.f);
+
+	startButton->Draw();
+
 	//std::cout << "123";
 	
 }
@@ -177,6 +198,8 @@ void TitleStage::Draw()
 void TitleStage::Process(SDL_Event* event)
 {
 	eventManager->Process(event);
+
+	startButton->Process(event);
 }
 
 
