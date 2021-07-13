@@ -23,6 +23,8 @@ private:
 	std::function<void(SDL_Event*)> onKeyDown   = nullptr;
 	std::function<void(SDL_Event*)> onKeyUp     = nullptr;
 
+	std::function<void(SDL_Event*)> windowEvent = nullptr;
+
 public:
 
 	EventManager();
@@ -33,6 +35,8 @@ public:
 
 	void SetOnKeyDown(std::function<void(SDL_Event*)> func);
 	void SetOnKeyUp(std::function<void(SDL_Event*)> func);
+
+	void SetWindowEvent(std::function<void(SDL_Event*)> func);
 
 	bool GetIsKeyDown(int index) const;
 	void SetIsKeyDown(int index, bool isDown);

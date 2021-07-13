@@ -30,6 +30,11 @@ void EventManager::SetOnKeyUp(std::function<void(SDL_Event*)> func)
 	onKeyUp = func;
 }
 
+void EventManager::SetWindowEvent(std::function<void(SDL_Event*)> func)
+{
+	windowEvent = func;
+}
+
 bool EventManager::GetIsKeyDown(int index) const
 {
 	return KEYS[index];
@@ -58,6 +63,8 @@ void EventManager::Process(SDL_Event* event)
 
 	onKeyUp(event);
 	onKeyDown(event);
+
+	windowEvent(event);
 }
 
 const std::function<void(SDL_Event*)> EventManager::operator[](const std::string& str)

@@ -41,8 +41,10 @@ int main()
 
 	while (1) 
 	{
+		SDL_Event e;
+		window->Poll(&e);
 
-		window->Process();
+		t.Process(&e);
 
 		SDL_Delay(1000 / 60);
 
