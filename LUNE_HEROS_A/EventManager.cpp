@@ -37,11 +37,19 @@ void EventManager::SetWindowEvent(std::function<void(SDL_Event*)> func)
 
 bool EventManager::GetIsKeyDown(int index) const
 {
+	if (index >= 322) {
+		return false;
+	}
+
 	return KEYS[index];
 }
 
 void EventManager::SetIsKeyDown(int index, bool isDown)
 {
+	if (index >= 322) {
+		return;
+	}
+
 	KEYS[index] = isDown;
 }
 
