@@ -2,7 +2,7 @@
 #define _BUTTON
 
 
-#include "./modules/SDL2-devel-2.0.14-VC/SDL2-2.0.14/include/SDL.h"
+#include <SDL.h>
 #include <functional>
 
 #include "Model.h"
