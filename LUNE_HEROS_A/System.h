@@ -15,11 +15,13 @@ private:
 	int lastFrameTime = 0;
 
 	GameWindow* window         = nullptr;
+
+	/* 매니저 클래스 */
 	StageManager* stageManager = nullptr;
 
 
 private:
-
+	
 	void Init(GameWindow* window, int stageId);
 
 public:

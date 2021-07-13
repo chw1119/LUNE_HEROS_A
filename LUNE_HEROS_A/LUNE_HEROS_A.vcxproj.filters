@@ -61,6 +61,9 @@
     <Filter Include="헤더 파일\game\logic\managers">
       <UniqueIdentifier>{b4c6123c-df2a-422f-a288-b51bf711d4e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\game\logic\managers\concurrent">
+      <UniqueIdentifier>{963002a5-fa06-4b0c-9343-6de38ff83e60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HEROS_A.cpp">
