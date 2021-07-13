@@ -1,8 +1,8 @@
 #ifndef __GAME_WINDOW
 #define  __GAME_WINDOW
 
-#include <SDL.h>
-#include <glew.h>
+#include "./modules/SDL2-devel-2.0.14-VC/SDL2-2.0.14/include/SDL.h"
+#include "./modules/glew-2.1.0-win32/glew-2.1.0/include/GL/glew.h"
 #include <iostream>
 
 #include "Resizable.h"

@@ -1,7 +1,7 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include <glew.h>
+#include "./modules/glew-2.1.0-win32/glew-2.1.0/include/GL/glew.h"
 
 #include <string>
 #include <fstream>

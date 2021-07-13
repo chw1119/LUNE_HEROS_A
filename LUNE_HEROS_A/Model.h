@@ -5,9 +5,10 @@
 #define STATUS_BINDED 1
 #define STATUS_WAITING 2
 
-#include <glew.h>
-#include <SDL.h>
-#include <SDL_image.h>
+#include "./modules/glew-2.1.0-win32/glew-2.1.0/include/GL/glew.h"
+#include "./modules/SDL2-devel-2.0.14-VC/SDL2-2.0.14/include/SDL.h"
+#include "./modules/SDL2_image-devel-2.0.5-VC/SDL2_image-2.0.5/include/SDL_image.h"
+
 
 #include "Shader.h"
 #include "Texture.h"

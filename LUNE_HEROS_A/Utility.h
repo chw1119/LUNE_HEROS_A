@@ -1,7 +1,7 @@
 #ifndef _UTILITY
 #define _UTILITY
 
-#include <SDL.h>
+#include "./modules/SDL2-devel-2.0.14-VC/SDL2-2.0.14/include/SDL.h"
 #include <chrono>
 #include <utility>
 #include <iostream>
