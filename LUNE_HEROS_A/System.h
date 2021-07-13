@@ -5,23 +5,22 @@
 #include "Looper.h"
 #include "TitleStage.h"
 #include "GameWindow.h"
+#include "StageManager.h"
 
 class System
 {
 private:
 
-	int loopDelay;
-	int focusedStage;
-	int lastFrameTime;
+	int loopDelay     = 0;
+	int lastFrameTime = 0;
 
-	GameWindow* window;
-
-
+	GameWindow* window         = nullptr;
+	StageManager* stageManager = nullptr;
 
 
 private:
 
-	void CreateStage(int stageId);
+	void Init(GameWindow* window, int stageId);
 
 public:
 

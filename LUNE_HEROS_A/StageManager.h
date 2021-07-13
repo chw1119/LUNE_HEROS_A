@@ -4,10 +4,12 @@
 #include "Stage.h"
 #include "TitleStage.h"
 
+#include "GameWindow.h"
+
 class StageManager
 {
 private:
-	
+	GameWindow* window     = nullptr;
 	TitleStage* titleStage = nullptr;
 
 	int focusedStageId = TITLE_STAGE_ID;
@@ -17,6 +19,11 @@ private:
 
 public:
 	StageManager();
+
+	StageManager(GameWindow* window);
+
+	Stage* GetStage(int StageId);
+	Stage* GetFucusedStage();
 };
 
 

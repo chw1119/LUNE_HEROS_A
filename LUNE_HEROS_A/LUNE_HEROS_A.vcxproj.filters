@@ -58,6 +58,9 @@
     <Filter Include="헤더 파일\graphic\GL\shader">
       <UniqueIdentifier>{43c9549a-3351-416b-b4fa-1b1dacd9586e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\game\logic\managers">
+      <UniqueIdentifier>{b4c6123c-df2a-422f-a288-b51bf711d4e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LUNE_HEROS_A.cpp">
@@ -106,6 +109,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="StageManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -172,6 +178,9 @@
     </ClInclude>
     <ClInclude Include="Shader.h">
       <Filter>헤더 파일\graphic\GL\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="StageManager.h">
+      <Filter>헤더 파일\game\logic\managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
