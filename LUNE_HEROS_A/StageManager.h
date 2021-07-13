@@ -19,8 +19,8 @@ private:
 
 public:
 	StageManager();
+
 	StageManager(GameWindow* window);
-	StageManager(GameWindow* window, int stageId);
 
 	Stage* GetStage(int StageId);
 	Stage* GetFucusedStage();

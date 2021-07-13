@@ -9,19 +9,9 @@ void StageManager::CreateStage(int id)
 	}
 }
 
-StageManager::StageManager()
-{
-
-}
-
 StageManager::StageManager(GameWindow* _window) : window(_window)
 {
 
-}
-
-StageManager::StageManager(GameWindow* _window, int stageId) : window(_window)
-{
-	CreateStage(stageId);
 }
 
 Stage* StageManager::GetStage(int StageId)
