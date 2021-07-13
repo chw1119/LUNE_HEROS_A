@@ -143,6 +143,11 @@ Texture* Model::GetTexture() const
 	return texture;
 }
 
+GameWindow* Model::GetWindow() const
+{
+	return windowParent;
+}
+
 void Model::SetTexture(Texture* texture)
 {
 	auto lastIndex = this->texture->GetIndex();
@@ -177,6 +182,26 @@ void Model::Position(float x, float y)
 {
 	xPos = x;
 	yPos = y;
+}
+
+float Model::GetXPos() const
+{
+	return xPos;
+}
+
+float Model::GetYPos() const
+{
+	return yPos;
+}
+
+float Model::GetXSize() const
+{
+	return xSize;
+}
+
+float Model::GetYSize() const
+{
+	return ySize;
 }
 
 void Model::Draw()

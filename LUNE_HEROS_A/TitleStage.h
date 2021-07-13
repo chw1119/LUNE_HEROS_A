@@ -12,6 +12,7 @@
 
 #include "Stage.h"
 #include "Model.h"
+#include "Button.h"
 #include "Shader.h"
 #include "Texture.h"
 #include "Utility.h"
@@ -30,6 +31,8 @@ private:
 
 	Model* titleLogo;
 	Model* background;
+
+	Button* startButton;
 
 	EventManager* eventManager;
 

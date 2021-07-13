@@ -8,13 +8,15 @@
 #include "Model.h"
 #include "Shader.h"
 #include "GameWindow.h"
+#include "EventManager.h"
 #include "Texture.h"
 
 class Button : public Model
 {
 private:
-	Texture* standerdTexture = nullptr;	
-	Texture* activatedTexture = nullptr;
+	Texture* standerdTexture   = nullptr;	
+	Texture* activatedTexture  = nullptr;
+	EventManager* eventManager = nullptr;
 
 	bool isSelected = false;
 
@@ -31,6 +33,8 @@ public:
 
 	void SetOnSelect(std::function<void(void)> func);
 	void SetOnNotSelect(std::function<void(void)> func);
+
+	bool GetIsSelected() const;
 
 };
 

@@ -59,10 +59,18 @@ public:
 
 	Texture* GetTexture()const;
 
+	GameWindow* GetWindow()const;
+
 	void SetTexture(Texture* texture);
 	
 
 	void Position(float x, float y);
+
+	float GetXPos() const;
+	float GetYPos() const;
+
+	float GetXSize() const;
+	float GetYSize() const;
 
 	virtual void Bind();
 

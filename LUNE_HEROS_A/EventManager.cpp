@@ -57,14 +57,36 @@ void EventManager::SetIsMouseDown(bool is)
 
 void EventManager::Process(SDL_Event* event)
 {
-	onMouseUp(event);
-	onMouseDown(event);
-	onMouseMove(event);
+	if (onMouseUp != nullptr)
+	{
+		onMouseUp(event);
+	}
 
-	onKeyUp(event);
-	onKeyDown(event);
+	if (onMouseDown != nullptr)
+	{
+		onMouseDown(event);
+	}
 
-	windowEvent(event);
+	if (onMouseMove != nullptr)
+	{
+		onMouseMove(event);
+	}
+
+	if (onKeyUp != nullptr)
+	{
+		onKeyUp(event);
+	}
+
+	if (onKeyDown != nullptr)
+	{
+		onKeyDown(event);
+	}
+
+	if (windowEvent != nullptr)
+	{
+		windowEvent(event);
+	}
+
 }
 
 const std::function<void(SDL_Event*)> EventManager::operator[](const std::string& str)
