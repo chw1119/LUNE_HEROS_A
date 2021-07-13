@@ -14,10 +14,9 @@ private:
 	int focusedStage;
 	int lastFrameTime;
 
-	Looper* looper;
 	GameWindow* window;
 
-	TitleStage* titleStage;
+
 
 
 private:
